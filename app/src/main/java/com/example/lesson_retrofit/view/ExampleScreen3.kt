@@ -45,8 +45,12 @@ fun ExampleScreen3(mainApi: MainApi) {
             Text(text = it.firstName)
             Text(text = it.lastName)
         }
-        OutlinedTextField(value = username.value, onValueChange = { username.value = it })
-        OutlinedTextField(value = password.value, onValueChange = { password.value = it })
+        OutlinedTextField(value = username.value, onValueChange = { username.value = it }, label = {
+            Text(text = "Type a username")
+        })
+        OutlinedTextField(value = password.value, onValueChange = { password.value = it }, label = {
+            Text(text = "Type a password")
+        })
         Button(onClick = {
             CoroutineScope(Dispatchers.IO).launch {
                 user.value =
