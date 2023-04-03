@@ -29,6 +29,12 @@ fun ExampleScreen1(mainApi: MainApi) {
             Text(text = it.brand)
             Text(text = it.title)
             Text(text = it.price.toString())
+            Text(text = it.discountPercentage.toString())
+            Text(text = it.rating.toString())
+            Text(text = it.stock.toString())
+            Text(text = it.brand)
+            Text(text = it.category)
+            Text(text = it.thumbnail)
         }
 
         Button(onClick = {

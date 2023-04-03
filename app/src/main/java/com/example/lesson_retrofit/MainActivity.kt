@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import com.example.lesson_retrofit.retrofit.MainApi
 import com.example.lesson_retrofit.ui.theme.LessonRetrofitTheme
-import com.example.lesson_retrofit.view.ExampleScreen3
+import com.example.lesson_retrofit.view.ExampleScreen2
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -21,8 +21,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             LessonRetrofitTheme {
                 // ExampleScreen1(mainApi = mainApi)
-                // ExampleScreen2()
-                ExampleScreen3(mainApi = mainApi)
+                ExampleScreen2(mainApi = mainApi)
+                // ExampleScreen3(mainApi = mainApi)
             }
         }
     }

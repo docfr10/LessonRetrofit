@@ -53,8 +53,6 @@ fun ExampleScreen3(mainApi: MainApi) {
                     mainApi.auth(UserAuth(username = username.value, password = password.value))
                 photo.value = Picasso.get().load(user.value!!.image).get().asImageBitmap()
             }
-        }) {
-            Text(text = "Sign in")
-        }
+        }) { Text(text = "Sign in") }
     }
 }
