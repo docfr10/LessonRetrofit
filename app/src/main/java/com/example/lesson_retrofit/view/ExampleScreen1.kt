@@ -10,14 +10,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.example.lesson_retrofit.retrofit.Product
-import com.example.lesson_retrofit.retrofit.ProductApi
+import com.example.lesson_retrofit.retrofit.MainApi
+import com.example.lesson_retrofit.retrofit.product.Product
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @Composable
-fun ExampleScreen1(productApi: ProductApi) {
+fun ExampleScreen1(mainApi: MainApi) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.SpaceEvenly,
@@ -25,13 +25,15 @@ fun ExampleScreen1(productApi: ProductApi) {
     ) {
         val product = remember { mutableStateOf<Product?>(null) }
 
-        product.value?.brand?.let { Text(text = it) }
-        product.value?.title?.let { Text(text = it) }
-        product.value?.price?.let { Text(text = it.toString()) }
+        product.value?.let {
+            Text(text = it.brand)
+            Text(text = it.title)
+            Text(text = it.price.toString())
+        }
 
         Button(onClick = {
             CoroutineScope(Dispatchers.IO).launch {
-                product.value = productApi.getProductById()
+                product.value = mainApi.getProductById()
             }
         }) { Text(text = "Get product") }
     }
