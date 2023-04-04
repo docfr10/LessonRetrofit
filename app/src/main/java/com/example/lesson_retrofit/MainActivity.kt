@@ -3,6 +3,7 @@ package com.example.lesson_retrofit
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.ui.platform.LocalContext
 import com.example.lesson_retrofit.retrofit.MainApi
 import com.example.lesson_retrofit.ui.theme.LessonRetrofitTheme
 import com.example.lesson_retrofit.view.ExampleScreen4
@@ -19,11 +20,13 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            val context = LocalContext.current
+
             LessonRetrofitTheme {
                 // ExampleScreen1(mainApi = mainApi)
                 // ExampleScreen2(mainApi = mainApi)
                 // ExampleScreen3(mainApi = mainApi)
-                ExampleScreen4(mainApi = mainApi)
+                ExampleScreen4(context = context, mainApi = mainApi)
             }
         }
     }

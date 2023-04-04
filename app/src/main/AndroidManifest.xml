@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--Permission to send notification for Android 13+-->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!--Permission to internet-->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
